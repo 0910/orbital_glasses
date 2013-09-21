@@ -1,0 +1,37 @@
+- @mix.build_image if @mix.image.nil?
+%fieldset
+  = f.field_container :title do
+    = f.label :title, t(:title)
+    %span.required *
+    %br
+    = f.text_field :title, :class => 'fullwidth title'
+    = f.error_message_on :title
+
+  = f.field_container :description do
+    %div
+      You can add links to the description by using the following format:
+      %br
+        &lt;a href="http://the_url_to_link_to"&gt;The link's label&lt;/a&gt;
+    = f.label :description, 'Description'
+    %span.required *
+    %br
+    = f.text_area :description, :class => 'fullwidth title'
+    = f.error_message_on :description
+  
+  = f.field_container :url do
+    = f.label :url, 'Url'
+    = f.text_field :url, :class => 'fullwidth title'
+    = f.error_message_on :url
+
+  = f.field_container :dj_name do
+    = f.label :dj_name, 'Dj Name'
+    = f.text_field :dj_name, :class => 'fullwidth title'
+    = f.error_message_on :dj_name
+
+  = f.fields_for :image, @mix.image do |fi|
+    - if @mix.image.persisted?
+      %div
+        = image_tag @mix.image.attachment.url(:product), class: 'preview'
+    = fi.label :attachment, 'Image'
+    = fi.file_field 'attachment'
+

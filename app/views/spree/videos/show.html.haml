@@ -1,0 +1,12 @@
+%p#notice
+	= notice
+%h1
+	= @video.title
+= link_to @video.url, @video.url
+%p #{@video.description}
+- if images = @video.images
+	.photo
+		- images.each do |image|
+			= image_tag(image.attachment.url(:large))
+
+= link_to 'Back', videos_path

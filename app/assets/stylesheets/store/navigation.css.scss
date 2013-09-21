@@ -1,0 +1,123 @@
+/* NAVIGATION */
+
+.navbar-fixed-top, .navbar-fixed-bottom{
+	position:relative;
+}
+.navbar-inverse .navbar-inner {
+  background-color: #000;
+  background-image: none;
+  background-repeat: no-repeat;
+  border-color: #252525;
+  border:none;
+  box-shadow: none;
+}
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+  color: #999999;
+  text-shadow: none;
+}
+.navbar .nav{
+	width:100%;
+	li{
+		border-right:1px solid #222;
+		a{
+			font:11px 'DINPro-Bold', helvetica, arial, sans-serif;
+			color:#8E8D8D;
+			padding:23px 25px;
+			text-shadow:none;
+			text-transform: uppercase;
+		}
+	}
+	li:hover{
+		background:#fff;
+		a{
+			color:#8E8D8D;
+			text-shadow:none;
+		}
+	}
+	.usermenu{
+		float:right;
+		border:none;
+		border-left:1px solid #222;
+	}
+}
+
+/* SUB NAVIGATION */
+.coleccionnav{
+	background:#fff;
+	display:none;
+	.span3{
+		border-left:1px solid #dcdcdc;
+		border-bottom:1px solid #dcdcdc;
+		height:103px;
+		margin-left:0;
+		width:25%;
+		a{
+			width:100%;
+			height:100%;
+			float:left;
+			h1{
+				width:100%;
+				text-align: center;
+				font:11px 'DINPro-Bold', helvetica, arial, sans-serif;
+				color:#202020;
+				background:transparent;
+				text-transform: uppercase;
+				letter-spacing: 2.6pt;
+				margin:35px 0 0 0;
+				padding:0px;
+			}
+			p{
+				width:100%;
+				text-align: center;
+				font:10px 'DINPro-Regular', helvetica, arial, sans-serif;
+				color:#aaa;
+				text-transform: uppercase;
+				letter-spacing: 2pt;
+				margin:0;
+				padding:2px 0;
+			}
+		}
+		a:hover{
+			text-decoration: none;
+			h1{
+				color:#aaa;
+			}
+		}
+	}
+	.span3:first-child{
+		border-left:0px;
+	}
+}
+.seriesnav{
+	border-bottom:1px solid #dcdcdc;
+	background: #fff;
+	a{
+		font: 11px 'DINPro-Regular', helvetica, arial, sans-serif;
+		padding:25px;
+		color:#808080;
+		float:left;
+		text-transform: uppercase;
+		letter-spacing: 1.3pt;
+	}
+	a{
+		border-left:1px solid #dcdcdc;
+	}
+	a:first-child{
+		border-left: 0;
+	}
+	a:hover{
+		text-decoration: none;
+	}
+}
+.seriesdesc{
+	border-bottom:1px solid #dcdcdc;
+	background: #fff;
+	p{
+		font: 12px 'DINPro-Regular', helvetica, arial, sans-serif;
+		padding:25px;
+		color:#808080;
+		float:left;
+		letter-spacing: 1.3pt;
+		width:70%;
+	}
+}

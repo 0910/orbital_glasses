@@ -1,0 +1,51 @@
+%p#notice
+	= notice
+.row-fluid
+	.span12.seriesnav
+		- @taxons = @product.taxons.first.permalink.split('/')
+		- @taxons.each do |tax|
+			= link_to(types_path(:types => tax)) do
+				= tax
+			- @taxon = tax
+.row-fluid.prod
+	.span6.prodphoto
+		- @product.images.each do |image|
+			= image_tag(image.attachment.url(:large))
+	.span6.proddesc
+		%h1 #{@product.name}
+		%p #{@product.description}
+		.formbox
+			= form_for :order, url: populate_orders_url do |f|
+				.formitem
+					.span3
+						%label Cantidad:
+					.span2
+						= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => 'title', :in => 1..100
+					.span7
+						.addtocart
+							%input.button(type="submit" value="agregar al carrito")						
+.row-fluid
+	.span12.variants
+		.variant
+			%p variantes
+		- @variants = @product.variants.active
+		- @variants.each do |variant|
+			- variant.images.each do |image|
+				.variant
+					= link_to('', :data => {:toggle => 'tooltip', :placement => 'top', :title => image.alt}) do
+						.ph
+							= image_tag(image.attachment.url(:small))
+.row-fluid
+	.span12.title
+		%p Otros modelos de esta coleccion
+- @types = Spree::Taxon.find_by_name!(@taxon)
+- @related = Spree::Product.in_taxon(@types)
+.row-fluid.related
+	- @related.each do |prod_rel|
+		.span2
+			= link_to(product_path(prod_rel), class: 'box minibox') do
+				.ph			
+					= image_tag(prod_rel.images.first.attachment.url(:large))
+				.over
+					%h1 producto
+					%p ver detalle

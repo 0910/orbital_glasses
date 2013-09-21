@@ -1,0 +1,91 @@
+#header{
+	padding: 0;
+}
+#logo{
+	background: url(logo.png);
+	height: 100px;
+	width: 150px;
+	background-repeat: no-repeat;
+}
+
+
+li{
+	list-style: none;
+}
+#admin-menu a{
+	padding: 25px 0;
+}
+.main-menu-wrapper{
+	li{
+		float: left;
+		list-style: none;
+		a{
+			font-size: 12px;
+			padding: 5px;
+		}
+	}
+}
+
+.row-fluid{
+	width: 100%;
+	float: left;
+}
+
+.span3{
+	width: 19%;
+	float: left;
+	background: #EEE;
+	margin: 0 7px 20px 0;
+	padding: 15px;
+	border: 1px solid #cee1f4;
+	border-radius: 3px;
+	.ph{
+		width: 100%;
+		height: 100px;
+		overflow: hidden;
+		img{
+			width: 100%;
+			height: auto;
+		}	
+	}
+	.destroy, .cover{
+		width: 100%;
+		display: block;
+		text-align: center;
+		margin-top: 10px;
+	}
+	.cover{
+		margin: 0px 0 10px;
+	}
+}
+
+.span4{
+	width: 19%;
+	float: left;
+}
+.attachment, .images_field .span4{
+	margin: 0px 7px 20px 0;
+	border: 1px solid #cee1f4;
+	border-radius: 3px;
+	padding: 20px;
+	overflow: hidden;
+}
+.add-image{
+	background: #777;
+	float: left;
+	display: block;
+}
+nav#admin-menu{
+	background: #000;
+}
+
+#admin-menu li a:hover, #admin-menu li.selected a{
+	background: #808080;
+}
+#admin-menu li a:hover:after, #admin-menu li.selected a:after{
+	border: none;
+}
+[data-hook="logo-wrapper"] a:hover{
+	cursor: default;
+}
+

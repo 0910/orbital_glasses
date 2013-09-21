@@ -1,0 +1,39 @@
+- @team.build_images if @team.images.nil?
+%fieldset.team
+	= f.field_container :title do
+		= f.label :title, t(:title)
+		%span.required *
+		%br
+		= f.text_field :title, :class => 'fullwidth title'
+		= f.error_message_on :title
+	= f.field_container :description do
+		= f.label :description, 'description'
+		%span.required *
+		%br
+		%div
+			You can add links to the description by using the following format: &lt;a href="http://the_url_to_link_to"&gt;The link's label&lt;/a&gt;
+			
+		= f.text_area :description, :class => 'fullwidth title'
+		= f.error_message_on :description
+
+	= f.field_container :images do
+		- unless @team.images.nil?
+			.row-fluid
+				- @team.images.each do |image|
+					= f.fields_for :images, image do |ff|
+						.span3
+							.cover
+								= ff.label 'Cover'
+								= ff.check_box :cover, :class => 'cover_select'
+							.ph
+								= image_tag(image.attachment.url(:small))
+							.destroy
+								= ff.label 'Destroy?'
+								= ff.check_box :_destroy
+		= f.fields_for :images, @team.images.build do |fi|
+			%div.images_field
+				.row-fluid
+					.span4
+						= fi.label :attachment, 'Image'
+						= fi.file_field 'attachment'
+	= f.button 'Add new image', :class => 'add-image'

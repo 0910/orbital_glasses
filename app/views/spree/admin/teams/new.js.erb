@@ -1,0 +1,3 @@
+$("#new_team").html('<%= escape_javascript(render :template => "spree/admin/teams/new", :formats => [:html], :handlers => [:haml]) %>');
+$("#admin_new_team").parent().hide();
+addImages();

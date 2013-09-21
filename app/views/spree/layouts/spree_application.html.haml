@@ -1,0 +1,46 @@
+!!! Strict
+%html
+	%head
+		%title Orbital
+		= stylesheet_link_tag "store/all", :media => "all"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+		= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyAoAqRFSg4SPOGlkeJumobsLgCYKIAAEM0&sensor=false"  
+	%body{controller: controller_name, action: action_name, :onload => "initialize()"}
+		.container
+			= render 'spree/shared/navigation'
+			.row-fluid
+				- flash.each do |name, msg|
+					- if msg.is_a?(String) 
+						%div{:class => "alert alert-#{name == :alert ? "error" : "success"}"}
+						%a.close{"data-dismiss" => "alert"}
+						= content_tag :div, msg, :id => "flash_#{name}"
+			= yield
+		.container
+			#footer
+				.row-fluid
+					.span4
+						=  link_to 'Home'
+						=  link_to 'Sol' 
+						=  link_to 'Receta'
+						=  link_to 'Relojes' 
+						=  link_to 'Snow'
+						.hr
+					.span4
+						=  link_to 'Team'
+						=  link_to 'About Orbital'
+						.hr
+						.newsletter
+					.span4
+						=  link_to 'Contacto'
+						=  link_to 'Locales' 
+						.hr
+						.fb
+						.tw
+				.row-fluid(style="margin-top:30px;")
+					%a.top
+				.row-fluid
+					.footerinside
+						%p 2013 ORBITAL. Todos los derechos reservados.
+						%a.nuevediez 0910
+				.row-fluid

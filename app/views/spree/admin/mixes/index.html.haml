@@ -1,0 +1,30 @@
+.toolbar
+  %ul.actions
+    %li#new_mix_link
+      = button_link_to 'New Mix', new_object_url, { :remote => true, :icon => 'add', :id => 'admin_new_mix' }
+  %br.clear
+
+%h1 Mixes
+
+#new_mix
+
+%table.index#listing_mix
+  %tr
+    %th Title
+    %th Link
+    %th Dj Name
+    %th
+    %th
+  - @collection.each do |mix|
+    %tr
+      %td= mix.title
+      %td= mix.url
+      %td= mix.dj_name
+      %td= image_tag(mix.image.attachment.url(:small)) if mix.image
+      %td.actions
+        = link_to_edit mix, :class => 'edit'
+        &nbsp;
+        = link_to_delete mix
+
+= paginate @collection.page(params[:page])
+

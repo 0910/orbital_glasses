@@ -1,0 +1,46 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      %button.btn.btn-navbar(type="button" data-toggle="collapse" data-target=".nav-collapse")
+      .nav-collapse.collapse
+        %ul.nav.navbar
+          %li
+            = link_to('HOME', )
+          %li.coleccionbot
+<<<<<<< HEAD
+            = link_to('COLECCIÓN', )
+          %li
+=======
+>>>>>>> 1f4e850ce319023152a1ff4804617a7e3b726584
+            = link_to('COLECCIÓN', products_path)
+          %li
+            = link_to('TEAM', teams_path)
+          %li
+            = link_to('CONTACTO', contacts_path )
+          %li.usermenu
+            = link_to('LOGOUT', )
+          %li.usermenu
+<<<<<<< HEAD
+            = link_to('CART (EMPTY)', )
+=======
+            = link_to('CART (EMPTY)', cart_path )
+            = link_to(cookies, )
+>>>>>>> 1f4e850ce319023152a1ff4804617a7e3b726584
+.row-fluid.coleccionnav
+  .span4
+    %a(href="#")
+      %h1 Sol
+      %p ver colección
+  .span4
+    %a(href="#")
+      %h1 Relojes
+      %p ver colección
+  .span4
+    %a(href="#")
+      %h1 Receta
+      %p ver colección
+<<<<<<< HEAD
+      = link_to('CART (EMPTY)', cart_path )
+      = link_to(cookies, )
+=======
+>>>>>>> 1f4e850ce319023152a1ff4804617a7e3b726584

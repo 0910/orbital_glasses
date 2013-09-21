@@ -1,0 +1,8 @@
+=# render :partial => 'spree/shared/error_messages', :stores => { :target => @store }
+
+= form_for [:admin, @store], html: {multipart: true} do |f|
+  = render 'form', f: f 
+  = render :partial => 'spree/admin/shared/new_resource_links'
+
+
+

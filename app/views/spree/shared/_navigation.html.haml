@@ -1,0 +1,45 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      %button.btn.btn-navbar(type="button" data-toggle="collapse" data-target=".nav-collapse")
+      .nav-collapse.collapse
+        %ul.nav.navbar
+          %li
+            = link_to('HOME', root_path)
+          %li.coleccionbot
+            = link_to('COLECCIÓN', '' )
+          %li
+            = link_to('TEAM', teams_path)
+          %li
+            = link_to('CONTACTO', contacts_path )
+          - if spree_current_user
+            %li.usermenu
+              = link_to('MI CUENTA', spree.account_path, id: 'editcustomer')
+            %li.usermenu
+              = link_to('SALIR', spree.logout_path, id: 'closeSession')
+            %li.usermenu
+              = link_to 'cart', spree.cart_path
+          - else
+            %li.usermenu
+              = link_to('REGISTRARSE', spree.signup_path, id: 'regbot')
+            %li.usermenu
+              = link_to('ENTRAR', spree.login_path, id: 'loginbot')
+            %li.usermenu
+              = link_to 'cart', spree.cart_path
+.row-fluid.coleccionnav
+  .span3
+    = link_to(types_path(:types => 'Sol')) do
+      %h1 Sol
+      %p ver colección
+  .span3
+    = link_to(types_path(:types => 'Relojes')) do
+      %h1 Relojes
+      %p ver colección
+  .span3
+    = link_to(types_path(:types => 'Receta')) do
+      %h1 Receta
+      %p ver colección
+  .span3
+    = link_to(types_path(:types => 'Snow')) do
+      %h1 Snow
+      %p ver colección

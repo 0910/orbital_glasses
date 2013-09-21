@@ -1,0 +1,4 @@
+
+$("#new_video").html('<%= escape_javascript(render :template => "spree/admin/videos/new", :formats => [:html], :handlers => [:haml]) %>');
+$("#admin_new_video").parent().hide();
+addImages();

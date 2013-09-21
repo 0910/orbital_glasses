@@ -1,0 +1,94 @@
+.prod{
+	background:#000;
+}
+.prodphoto{
+	background:#fff;
+	height:370px;
+	img{
+		width:100%;
+	}
+}
+.proddesc{
+	h1{
+		font:24px 'DINPro-Regular', helvetica, arial, sans-serif;
+		color:#fff;
+		text-transform: uppercase;
+		margin:5% 5% 0 5%;
+		letter-spacing: 2.6pt;
+	}
+	p{
+		font:11px 'DINPro-Regular', helvetica, arial, sans-serif;
+		color:#ccc;
+		text-transform: uppercase;
+		margin:1% 5% 0;
+		width:80%;
+		letter-spacing: 1pt;
+	}
+}
+.variants{
+	background: #fff;
+	border-top:1px solid #dcdcdc;
+	p{
+		font:11px 'DINPro-Regular', helvetica, arial, sans-serif;
+		color:#a0a0a0;
+		text-transform: uppercase;
+		margin:0;
+		padding:27% 20%;
+		letter-spacing: 1pt;
+		text-align: center;
+	}
+	.variant{
+		width:104px;
+		height:81px;
+		border-left:1px solid #dcdcdc;
+		margin:0;
+		float:left;
+	}
+	.variant:first-child{
+		border-left:0px;
+		width:120px;
+		height:81px;
+		margin:0;
+	}
+}
+.formbox{
+	margin:5%  10% 5% 5%;
+	float:left;
+	.formitem{
+		border-top:1px solid #222;
+		border-bottom:1px solid #222;
+		float:left;
+		padding:15px 0;
+		label{
+			font:11px 'DINPro-Regular', helvetica, arial, sans-serif;
+			color:#fff;
+			letter-spacing: 1pt;
+			text-transform: uppercase;
+			margin-top:6px;
+		}
+		input[type="number"]{
+			width:80%;
+			margin:0;
+			padding:3% 10%;
+			background:transparent;
+			border:1px solid #222;
+			border-radius: 0px;
+		}
+		.addtocart{
+			input{
+				width:90%;
+				float:right;
+				font:11px 'DINPro-Regular', helvetica, arial, sans-serif;
+				color:#fff;
+				letter-spacing: 1pt;
+				text-transform: uppercase;
+				background:#303030;
+				border:none;
+				box-shadow:none;
+			}
+			input:hover{
+				background: #606060;
+			}
+		}
+	}
+}

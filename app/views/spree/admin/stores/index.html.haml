@@ -1,0 +1,30 @@
+.toolbar
+  %ul.actions
+    %li#new_store_link
+      = button_link_to 'New Store', new_object_url, { :remote => true, :icon => 'add', :id => 'admin_new_store' }
+  %br.clear
+
+%h1 Store
+
+#new_store
+
+%table.index#listing_local
+  %tr
+    %th Title
+    %th Description
+    %th Image
+    %th Actions
+  - @collection.each do |store|
+    %tr
+      %td= store.title
+      %td= store.description.truncate(40)
+      %td
+        - unless store.images.empty?
+          = image_tag(store.images.first.attachment.url(:small)) if store.images
+      %td.actions
+        = link_to_edit store, :class => 'edit'
+        &nbsp;
+        = link_to_delete store
+
+= paginate @collection.page(params[:page])
+

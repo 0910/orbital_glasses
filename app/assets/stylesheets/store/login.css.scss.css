@@ -1,0 +1,49 @@
+#existing-customer, #new-customer{
+	background:#fff;
+	padding-bottom:30px;
+	font: 11px 'DINPro-Regular', helvetica, arial, sans-serif;
+	color:#303030;
+	letter-spacing: 1.3pt;
+	h6{
+		border-bottom:1px solid #dcdcdc;
+		font: 11px 'DINPro-Regular', helvetica, arial, sans-serif;
+		padding:25px;
+		color:#808080;
+		float:left;
+		text-transform: uppercase;
+		letter-spacing: 1.3pt;
+		margin:0 0 20px 0;
+		width:95%;
+	}
+	#password-credentials{}
+	label{
+		font: 12px 'DINPro-Regular', helvetica, arial, sans-serif;
+		letter-spacing: 1.3pt;
+		color:#303030;
+		margin:0;
+	}
+	div[data-hook="login"], div[data-hook="signup"]{
+		padding:0 30px;
+	}
+	#spree_user_remember_me{
+		float:left;
+		margin:2px 5px 0 0;
+	}
+	input[type="submit"]{
+		width:15%;
+		font-family: 'DINPro-Bold', helvetica, arial, sans-serif;
+		background: #bcbcbc;
+		border-radius:3px;
+	}
+	input[type="submit"]:hover{
+		background: #ddd;
+		color:#555;
+	}
+	input{
+		border-radius: 3px;
+	}
+	a:hover{
+		background:transparent;
+		color:#333;
+	}
+}

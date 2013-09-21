@@ -1,0 +1,29 @@
+%p#notice
+	= notice
+%h1
+	= @store.title
+%p #{@store.description}
+.row-fluid
+	%h1 Ubicación
+	#map_canvas
+  
+  
+
+:javascript
+	myCenter = new google.maps.LatLng(#{@store.latitude}, #{@store.longitude});
+	function initialize() {
+
+		var mapOptions = {
+			center: myCenter,
+			zoom: 16,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("map_canvas"),
+		mapOptions);
+		var marker=new google.maps.Marker({
+			position:myCenter,
+		});
+
+		marker.setMap(map);
+
+	}

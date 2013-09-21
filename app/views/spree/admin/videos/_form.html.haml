@@ -1,0 +1,47 @@
+- @video.build_images if @video.images.nil?
+%fieldset.video
+  = f.field_container :title do
+    = f.label :title, t(:title)
+    %span.required *
+    %br
+    = f.text_field :title, :class => 'fullwidth title'
+    = f.error_message_on :title
+
+  = f.field_container :description do
+    %div
+      You can add links to the description by using the following format:
+      %br
+        &lt;a href="http://the_url_to_link_to"&gt;The link's label&lt;/a&gt;
+    = f.label :description, 'Description'
+    %span.required *
+    %br
+    = f.text_area :description, :class => 'fullwidth title'
+    = f.error_message_on :description
+  
+  = f.field_container :url do
+    = f.label :url, 'Url'
+    = f.text_field :url, :class => 'fullwidth title'
+    = f.error_message_on :url
+  = f.field_container :images do
+    - unless @video.images.nil?
+      .row-fluid
+        - @video.images.each do |image|
+          = f.fields_for :images, image do |ff|
+            .span3
+              .cover
+                = ff.label 'Cover'
+                = ff.check_box :cover, :class => 'cover_select'
+              .ph
+                = image_tag(image.attachment.url(:large))
+              .destroy
+                = ff.label 'Destroy?'
+                = ff.check_box :_destroy
+    = f.fields_for :images, @video.images.build do |fi|
+      %div.images_field
+        .row-fluid
+          .span4.attachment
+            = fi.label :attachment, 'Image'
+            = fi.file_field 'attachment'
+            
+  .row-fluid    
+    = f.button 'Add new image', :class => 'add-image'

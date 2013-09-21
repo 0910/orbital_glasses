@@ -1,0 +1,29 @@
+%fieldset
+  = f.field_container :name do
+    = f.label :name, t(:name)
+    = f.text_field :name, :class => 'fullwidth title'
+    = f.error_message_on :name
+
+  = f.field_container :email do
+    = f.label :email, t(:email)
+    = f.text_field :email, :class => 'fullwidth title'
+    = f.error_message_on :email
+
+  = f.field_container :subject do
+    = f.label :subject, 'subject'
+    = f.text_field :subject, :class => 'fullwidth title'
+    = f.error_message_on :subject
+  
+  = f.field_container :body do
+    = f.label :body, 'body'
+    = f.text_area :body, :class => 'fullwidth title'
+    = f.error_message_on :body
+
+  = f.field_container :tipo_consulta do
+    = f.label :tipo_consulta, 'Tipo de consulta'
+    = f.text_field :tipo_consulta, :class => 'fullwidth title'
+    = f.error_message_on :tipo_consulta
+
+  = f.field_container :estado do
+    = f.label :estado, 'Estado'
+    = f.select(:estado, options_for_select(['Nuevo','Revisado', 'Contestado', 'Finalizado'], :selected => @contact.estado) )

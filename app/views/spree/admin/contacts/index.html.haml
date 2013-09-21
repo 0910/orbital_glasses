@@ -1,0 +1,24 @@
+.toolbar
+  
+%h1 Contact
+
+%table.index
+  %tr
+    %th Name
+    %th Subject
+    %th Tipo de consulta
+    %th Estado
+    %th
+  - @collection.each do |consulta|
+    %tr
+      %td= consulta.name
+      %td= consulta.subject
+      %td= consulta.tipo_consulta
+      %td= consulta.estado
+      %td.actions
+        = link_to_edit consulta, :class => 'edit'
+        &nbsp;
+        = link_to_delete consulta
+
+= paginate @collection.page(params[:page])
+

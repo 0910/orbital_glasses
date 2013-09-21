@@ -1,0 +1,20 @@
+.row-fluid
+  .span12.seriesnav
+    %a Sol
+    %a Hombre
+    %a Vintage Series
+.row-fluid
+  .span12.seriesdesc
+    %p
+      Íconos del mundo de las gafas de los años 50’s y 60’s representados en la
+      actualidad utilizando los mismos materiales de aquella época, colores, estilo, y
+      respetando una escencia fresca y colorida, adaprando el estilo a nuestros tiempos.
+.row-fluid
+  - @products.each do |product|
+    .span3
+      = link_to(product, class: 'box smallbox') do
+        .ph
+          = large_image(product, :itemprop => "image")
+        .over
+          %h1= product.name
+          %p ver detalle
