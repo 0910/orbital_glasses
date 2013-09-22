@@ -14,5 +14,6 @@
 /log/*.log
 /tmp
 
-
+public/assets
+public/spree
 /public/spree/products/
