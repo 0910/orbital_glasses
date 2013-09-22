@@ -44,9 +44,18 @@ OrbitalGlasses::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = Proc.new do |source|
+    if source =~ /(.ttf|.woff|.eot|.eot\?#iefix)$/i
+      "//foundryclothingla.com"
+    else
+      "//assets#{(Zlib.crc32(source) % 4)}.foundryclothingla.com"
+    end
+  end
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w( search.js store/all.js store/all.css )
+
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
