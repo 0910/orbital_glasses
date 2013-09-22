@@ -109,6 +109,9 @@ GEM
     erubis (2.7.0)
     execjs (2.0.1)
     ffaker (1.16.2)
+    formtastic (2.2.1)
+      actionpack (>= 3.0)
+    geocoder (1.1.8)
     gyoku (0.4.6)
       builder (>= 2.1.2)
     haml (4.0.3)
@@ -295,6 +298,8 @@ DEPENDENCIES
   bxslider-rails
   capistrano
   coffee-rails (~> 3.2.1)
+  formtastic
+  geocoder
   haml
   jquery-rails (~> 2.2.0)
   mysql2
