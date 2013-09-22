@@ -1,7 +1,7 @@
 - @video.build_images if @video.images.nil?
 %fieldset.video
   = f.field_container :title do
-    = f.label :title, t(:title)
+    = f.label :title, :title
     %span.required *
     %br
     = f.text_field :title, :class => 'fullwidth title'

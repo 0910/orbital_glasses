@@ -77,8 +77,8 @@ module OrbitalGlasses
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => "orbital.com",
-      :user_name            => "mail",
-      :password             => "pass",
+      :user_name            => "octaviopochiero@gmail.com",
+      :password             => "octa30277519",
       :authentication       => :plain,
       :enable_starttls_auto => true
     }
