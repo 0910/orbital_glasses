@@ -25,4 +25,12 @@ set :keep_releases, 2
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
+namespace :images do
+  task :symlink, :except => { :no_release => true } do
+    run "rm -rf #{release_path}/public/spree"
+    run "ln -nfs #{shared_path}/spree #{release_path}/public/spree"
+  end
+end
+after "bundle:install", "images:symlink"
+
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
