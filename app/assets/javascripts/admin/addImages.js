@@ -8,14 +8,17 @@ function addImages(){
 	section = $('.admin form fieldset').attr("class");
 
 	lastImage = $('#'+section+'_images_field input:last-child').attr('id');
+	if (lastImage == null) {
 
-// Obtenemos el ultimo index de imagenes si existe
-	if (lastImage.length) {
-		lastImageSplit = lastImage.split('_');
-		i = lastImageSplit[3] ;
-		i++;
 	}else{
-		i = 1;
+	// Obtenemos el ultimo index de imagenes si existe
+		if (lastImage.length) {
+			lastImageSplit = lastImage.split('_');
+			i = lastImageSplit[3] ;
+			i++;
+		}else{
+			i = 1;
+		}
 	}
 
 // Agregamos un nuevo campo de imagen
