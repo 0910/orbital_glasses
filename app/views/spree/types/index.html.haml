@@ -8,8 +8,23 @@
       actualidad utilizando los mismos materiales de aquella época, colores, estilo, y
       respetando una escencia fresca y colorida, adaprando el estilo a nuestros tiempos.
 .row-fluid
+  .span3
+    - @taxons.each do |tax|
+      - if tax.parent_id.nil?
+        = link_to(types_path(:types => tax.name)) do
+          %h3= tax.name
+        - @taxons.each do |tax_1|
+          - if tax_1.parent_id == tax.id
+            %h4= tax_1.name
+            - @taxons.each do |tax_2|
+              - if tax_2.parent_id == tax_1.id
+                %h6= tax_2.name
+                - @taxons.each do |tax_3|
+                  - if tax_3.parent_id == tax_2.id
+                    = tax_3.name
+                    %br
   - @products.each do |product|
-    .span4
+    .span3
       = link_to(product, class: 'box smallbox') do
         - unless product.images.empty?
           .ph
@@ -17,19 +32,5 @@
           .over
             %h1= product.name
             %p ver detalle
-- @taxons.each do |tax|
-  - if tax.parent_id.nil?
-    = link_to(types_path(:types => tax.name)) do
-      %h3= tax.name
-    - @taxons.each do |tax_1|
-      - if tax_1.parent_id == tax.id
-        %h4= tax_1.name
-        - @taxons.each do |tax_2|
-          - if tax_2.parent_id == tax_1.id
-            %h6= tax_2.name
-            - @taxons.each do |tax_3|
-              - if tax_3.parent_id == tax_2.id
-                = tax_3.name
-                %br
        
 
