@@ -18,7 +18,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository, "git@github.com:octanko/orbital_glasses.git"
+set :repository, "git@github.com:0910/orbital_glasses.git"
 set :branch, "master"
 set :keep_releases, 2
 
