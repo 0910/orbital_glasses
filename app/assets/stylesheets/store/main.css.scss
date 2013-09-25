@@ -1,6 +1,49 @@
 body{
 	background: #f5f5f5 url(bg.jpg) repeat;
 }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 /*
 FONT
 */
@@ -78,7 +121,7 @@ FONT
 	border-bottom:1px solid #dcdcdc;
 	p{
 		text-align: center;
-		font:11px 'DINPro-Regular', helvetica, arial, sans-serif;
+		font:11px 'DINPro-Bold', helvetica, arial, sans-serif;
 		color:#aaa;
 		text-transform: uppercase;
 		letter-spacing: 1.4pt;
@@ -98,7 +141,7 @@ FONT
 	float:left;
 }
 .minibox{
-	height:124px;
+	height:100px;
 	width:159.166667px;
 	float:left;
 	cursor:pointer;
@@ -116,10 +159,10 @@ FONT
 	}
 }
 .minibox .over{
-	margin-top:-124px;
+	margin-top:-100px;
 }
 .minibox .over, .smallbox .ph{
-	height: 124px;
+	height: 100px;
 }
 .minibox .over h1{
 	width:100%;
@@ -128,7 +171,7 @@ FONT
 	color:#202020;
 	text-transform: uppercase;
 	letter-spacing: 2.6pt;
-	margin:45px 0 0 0;
+	margin:30px 0 0 0;
 	padding:0px;
 }
 .minibox .over p{
@@ -142,7 +185,7 @@ FONT
 	padding:2px 0;
 }
 .smallbox{
-	height:180px;
+	height:151px;
 }
 .smallbox .over{
 	margin-top:-180px;
@@ -165,7 +208,7 @@ FONT
 	color:#202020;
 	text-transform: uppercase;
 	letter-spacing: 2.6pt;
-	margin:75px 0 0 0;
+	margin:60px 0 0 0;
 	padding:0px;
 }
 .smallbox .over p{
@@ -247,6 +290,18 @@ FONT
 	letter-spacing: 2pt;
 	margin:0;
 	padding:2px 0;
+}
+.fullbox{
+	background:#fff;
+	p{
+		text-align: left;
+		font:11px/17px 'DINPro-Regular', helvetica, arial, sans-serif;
+		color:#808080;
+		text-transform: uppercase;
+		letter-spacing: 0.6pt;
+		margin:0;
+		padding:25px;
+	}
 }
 .bxslider{
 	list-style: none;

@@ -15,8 +15,17 @@
   color: #999999;
   text-shadow: none;
 }
+.navbar .brand{
+	float:left;
+	width:200px;
+	height:60px;
+	background: url(logo.jpg) no-repeat center left;
+	margin:0;
+	padding:0;
+	border-right:1px solid #222;
+}
 .navbar .nav{
-	width:100%;
+	width:70%;
 	li{
 		border-right:1px solid #222;
 		a{
@@ -46,8 +55,7 @@
 	background:#fff;
 	display:none;
 	.span3{
-		border-left:1px solid #dcdcdc;
-		border-bottom:1px solid #dcdcdc;
+		border-right:1px solid #dcdcdc;
 		height:103px;
 		margin-left:0;
 		width:25%;
@@ -84,20 +92,31 @@
 			}
 		}
 	}
-	.span3:first-child{
-		border-left:0px;
+	.span3:last-child{
+		border-right:0px;
 	}
 }
 .seriesnav{
 	border-bottom:1px solid #dcdcdc;
+	border-top:1px solid #dcdcdc;
 	background: #fff;
-	a{
-		font: 11px 'DINPro-Regular', helvetica, arial, sans-serif;
+	h1{
+		font: 13px 'DINPro-Regular', helvetica, arial, sans-serif;
 		padding:25px;
 		color:#808080;
 		float:left;
 		text-transform: uppercase;
 		letter-spacing: 1.3pt;
+		margin:0;
+	}
+	a{
+		font: 11px 'DINPro-Bold', helvetica, arial, sans-serif;
+		padding:27px;
+		color:#808080;
+		float:left;
+		text-transform: uppercase;
+		letter-spacing: 1.3pt;
+		margin:0;
 	}
 	a{
 		border-left:1px solid #dcdcdc;
@@ -107,6 +126,10 @@
 	}
 	a:hover{
 		text-decoration: none;
+	}
+	a#filters{
+		float:right;
+		cursor:pointer;
 	}
 }
 .seriesdesc{
@@ -119,5 +142,50 @@
 		float:left;
 		letter-spacing: 1.3pt;
 		width:70%;
+	}
+}
+.treemenu{
+	border-bottom:1px solid #dcdcdc;
+	background:#fff;
+	padding-bottom:25px;
+	h1{
+		width:100%;
+		text-align: left;
+		font:12px 'DINPro-Bold', helvetica, arial, sans-serif;
+		color:#a0a0a0;
+		background:transparent;
+		text-transform: uppercase;
+		letter-spacing: 1.6pt;
+		padding:25px;
+		margin:0 0 10px 0;
+		border-bottom:1px solid #dcdcdc;
+		float:left;
+	}
+	h4{
+		width:100%;
+		text-align: left;
+		font:11px 'DINPro-Bold', helvetica, arial, sans-serif;
+		color:#808080;
+		text-transform: uppercase;
+		letter-spacing: 0.8pt;
+		margin:15px 0px 0px 0px;
+		padding:10px 25px;
+		float:left;
+	}
+	a, a.visited{
+		text-align: left;
+		font:11px 'DINPro-Regular', helvetica, arial, sans-serif;
+		color:#808080;
+		text-transform: uppercase;
+		letter-spacing: 0.8pt;
+		margin:0;
+		padding:7px 25px;
+		float:left;
+		width:80%;
+	}
+	a:hover{
+		text-decoration: none;
+		color:#111;
+		background: transparent;
 	}
 }

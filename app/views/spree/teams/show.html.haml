@@ -1,5 +1,15 @@
 %p#notice
 	= notice
-%h1
-	= @team.title
-= link_to 'Back', videos_path
+.row-fluid
+	.span12.seriesnav
+		%h1
+			= @team.title
+		= link_to 'Volver', teams_path
+.row-fluid
+	%ul.bxslider
+		- @team.images.each do |image|
+			%li.item
+				= image_tag(image.attachment.url(:original))
+.row-fluid.fullbox
+	%p
+		= @team.description

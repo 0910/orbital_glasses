@@ -1,14 +1,10 @@
-%h1 Listing teams
-
-%table
-  %tr
-    %th
-    %th
-    %th
-
+.row-fluid
   - @teams.each do |team|
-    %tr
-      %td 
-        = team.title
-      %td 
-        =  link_to 'Show', team
+    .span3
+      = link_to(team, class: 'box smallbox') do
+        - unless team.images.empty?
+          .ph
+            = image_tag(team.images.first.attachment.url(:large))
+          .over
+            %h1= team.title
+            %p ver detalle

@@ -18,6 +18,11 @@ $(function(){
     maxSlides: 5,
     slideMargin: 0
   });
+  $('#filters').click(function(event){
+    event.preventDefault();
+    $('.treemenu').slideToggle();
+  });
+  $('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
   $('.variant a').tooltip();
   /*$('.twitterfeed').tweet({
     modpath: '/assets/store/',

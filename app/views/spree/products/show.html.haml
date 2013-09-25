@@ -10,10 +10,10 @@
 .row-fluid.prod
 	.span6.prodphoto
 		- @product.images.each do |image|
-			= image_tag(image.attachment.url(:large))
+			= link_to image_tag(image.attachment.url(:large)), image.attachment.url(:original), class: 'cloud-zoom', rel:'adjustX: 0, adjustY:0'
 	.span6.proddesc
 		%h1 #{@product.name}
-		%p #{@product.description}
+		%p=raw product_description(@product).gsub("\n","<br/>") rescue t(:product_has_no_description)
 		.formbox
 			= form_for :order, url: populate_orders_url do |f|
 				.formitem
@@ -23,7 +23,7 @@
 						= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), 1, :class => 'title', :in => 1..100
 					.span7
 						.addtocart
-							%input.button(type="submit" value="agregar al carrito")						
+							%input.button(type="submit" value="agregar al carrito")				
 .row-fluid
 	.span12.variants
 		.variant
@@ -47,5 +47,5 @@
 				.ph			
 					= image_tag(prod_rel.images.first.attachment.url(:large))
 				.over
-					%h1 producto
+					%h1 #{@product.name}
 					%p ver detalle
