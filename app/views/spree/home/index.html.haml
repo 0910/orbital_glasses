@@ -30,26 +30,31 @@
 						%h1 RELOJES
 						%p ver colección
 			.row-fluid.box.midbox
-				.twitterfeed
+				= link_to(stores_path, class: 'box midbox') do
+					.ph
+						= image_tag("sol_hombre.jpg")
+					.over
+						%h1 STORES
+						%p visita online
 		.span4
 			.row-fluid
-				%a.box.midbox(href="#")
+				= link_to(types_path, class: 'box midbox') do
 					.ph
-						= image_tag("small04.jpg")
+						= image_tag("sol_hombre.jpg")
 					.over
 						%h1 SOL HOMBRE
 						%p ver colección
 			.row-fluid
-				%a.box.midbox(href="#")
+				= link_to(teams_path, class: 'box midbox') do
 					.ph
 						= image_tag("team.jpg")
 					.over
 						%h1 TEAM
-						%p ver noticias
+						%p ver integrantes
 			.row-fluid
-				%a.box.midbox(href="#")
+				= link_to(types_path, class: 'box midbox') do
 					.ph
-						= image_tag("small02.jpg")
+						= image_tag("sol_mujer.jpg")
 					.over
 						%h1 SOL MUJER
 						%p ver colección

@@ -127,9 +127,14 @@
 	a:hover{
 		text-decoration: none;
 	}
-	a#filters{
+	a#filters, a.back{
 		float:right;
 		cursor:pointer;
+		color:#808080;
+	}
+	a#filters:hover, a.back:hover{
+		background:#fff;
+		color:#606060;
 	}
 }
 .seriesdesc{
@@ -144,10 +149,29 @@
 		width:70%;
 	}
 }
+.form-horizontal .controls{
+	margin:0;
+}
+.form-horizontal .control-group{
+	margin:0;
+}
 .treemenu{
 	border-bottom:1px solid #dcdcdc;
 	background:#fff;
 	padding-bottom:25px;
+	.controls{
+		margin-left:0;
+	}
+	input[type="checkbox"]{
+		text-align: left;
+		font:11px 'DINPro-Regular', helvetica, arial, sans-serif;
+		color:#808080;
+		text-transform: uppercase;
+		letter-spacing: 0.8pt;
+		margin:2.5% 0% 2.5% 10%;
+		float:left;
+		width:5%;
+	}
 	h1{
 		width:100%;
 		text-align: left;
@@ -162,26 +186,30 @@
 		float:left;
 	}
 	h4{
-		width:100%;
 		text-align: left;
 		font:11px 'DINPro-Bold', helvetica, arial, sans-serif;
 		color:#808080;
 		text-transform: uppercase;
 		letter-spacing: 0.8pt;
-		margin:15px 0px 0px 0px;
-		padding:10px 25px;
+		margin:20px 0px 0px 0px;
+		padding:2.5% 10%;
+		float:left;
+		width:80%;
+	}
+	.check_cont{
+		width:100%;
 		float:left;
 	}
-	a, a.visited{
+	label{
 		text-align: left;
 		font:11px 'DINPro-Regular', helvetica, arial, sans-serif;
 		color:#808080;
 		text-transform: uppercase;
 		letter-spacing: 0.8pt;
 		margin:0;
-		padding:7px 25px;
+		padding:1.5% 5%;
 		float:left;
-		width:80%;
+		width:70%;
 	}
 	a:hover{
 		text-decoration: none;

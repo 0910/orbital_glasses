@@ -4,7 +4,7 @@
 	.span12.seriesnav
 		%h1
 			= @team.title
-		= link_to 'Volver', teams_path
+		= link_to 'Volver', teams_path, class:'back'
 .row-fluid
 	%ul.bxslider
 		- @team.images.each do |image|
@@ -12,4 +12,4 @@
 				= image_tag(image.attachment.url(:original))
 .row-fluid.fullbox
 	%p
-		= @team.description
+		= @team.description.gsub("/\r\n/","<br/>")

@@ -18,6 +18,11 @@ $(function(){
     maxSlides: 5,
     slideMargin: 0
   });
+  $('.bx-wrapper').hover(function(){
+    $(this).find('.bx-controls-direction').fadeIn();
+  }, function(){
+    $(this).find('.bx-controls-direction').fadeOut();
+  });
   $('#filters').click(function(event){
     event.preventDefault();
     $('.treemenu').slideToggle();

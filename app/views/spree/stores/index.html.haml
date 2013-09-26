@@ -1,16 +1,10 @@
-%h1 Listing stores
-
-%table
-  %tr
-    %th
-    %th
-    %th
-
+.row-fluid
   - @stores.each do |store|
-    %tr
-      %td 
-        = store.title
-      %td
-        = store.description
-      %td 
-        =  link_to 'Show', store
+    .span3
+      = link_to(store, class: 'box smallbox') do
+        - unless store.images.empty?
+          .ph
+            = image_tag(store.images.first.attachment.url(:large))
+          .over
+            %h1= store.title
+            %p ver detalle
