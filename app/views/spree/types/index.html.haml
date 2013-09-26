@@ -23,11 +23,12 @@
                             %br
 .row-fluid
   - @products.each do |product|
-    .span3
-      = link_to(product, class: 'box smallbox') do
-        - unless product.images.empty?
-          .ph
-            = image_tag(product.images.first.attachment.url(:large))
-          .over
-            %h1= product.name
-            %p ver detalle
+    - unless product.deleted_at!=nil
+      .span3
+        = link_to(product, class: 'box smallbox') do
+          - unless product.images.empty?
+            .ph
+              = image_tag(product.images.first.attachment.url(:large))
+            .over
+              %h1= product.name
+              %p ver detalle
