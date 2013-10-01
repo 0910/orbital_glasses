@@ -44,7 +44,51 @@ $(function(){
     loading_text: "Loading <a href=\"http://twitter.com/rolle\">my</a> Cargando Tweets...",
     template: '<div class="the-tweet">{text} {time} <a class="link" target="_blank" href="https://twitter.com/LaliMusica"></a></div>'
   });*/
+
+  // -------------------------
+  // Mostrar / ocultar productos por filtros
+  // -------------------------
+  taxon = [];
+  $('input[type=checkbox]').change(function(){
+    if($(this).attr('checked')){      
+      taxon.push($(this).attr('name').toLowerCase());
+      filterProducts(taxon);
+    }else{
+      var remove = $(this).attr('name').toLowerCase();
+      taxon = $.grep(taxon, function(value) {
+        return value != remove;
+      });
+      filterProducts(taxon);
+    }
+  });
+  // -------------------------
+  // End filtro productos
+  // -------------------------
+
 });
+
 $(window).load(function () {
   $('#notice, #flash_success, #flash_notice').delay(3000).slideUp(200);
 });
+
+
+function filterProducts(taxon){
+  if(taxon.length == 0){
+    $('.product').fadeIn(500);
+  }else{
+    $('.product').hide();
+    var taxons = taxon.length;
+    $('.product').each(function(){
+      productTaxons = 0;
+      for ( var i = 0; i < taxon.length; i = i + 1 ) {
+        if($(this).find('p.taxons').text().match(taxon[i])){
+          productTaxons++;
+        };
+        if(productTaxons==taxons){
+          $(this).fadeIn(500);
+        }
+      };
+
+    })    
+  }
+}

@@ -12,4 +12,6 @@
 				= image_tag(image.attachment.url(:original))
 .row-fluid.fullbox
 	%p
-		= @team.description.gsub("/\r\n/","<br/>")
+		- @description.each do |description|
+			= description
+			%br

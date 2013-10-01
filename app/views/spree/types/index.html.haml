@@ -23,8 +23,12 @@
                             %br
 .row-fluid
   - @products.each do |product|
+    - @tax_name = ''
     - unless product.deleted_at!=nil
-      .span3
+      - product.taxons.each do |taxon|
+        - @tax_name += ' '+taxon.permalink
+      .span3.product
+        %p.hidden.taxons=@tax_name
         = link_to(product, class: 'box smallbox') do
           - unless product.images.empty?
             .ph

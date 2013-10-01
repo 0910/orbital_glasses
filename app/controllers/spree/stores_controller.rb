@@ -12,6 +12,7 @@ module Spree
 
     def show
       @store = Store.find(params[:id])
+      @description = @store.description.split(/\r\n/)
     end
   end
 end

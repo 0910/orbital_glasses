@@ -12,6 +12,7 @@ module Spree
 
     def show
       @team = Team.find(params[:id])
+      @description = @team.description.split(/\r\n/)
     end
   end
 end

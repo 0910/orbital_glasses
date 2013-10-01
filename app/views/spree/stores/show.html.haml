@@ -12,7 +12,9 @@
 				= image_tag(image.attachment.url(:original))
 .row-fluid.fullbox
 	%p
-		= @store.description.gsub("/\r\n/","<br/>")
+		- @description.each do |description|
+			= description
+			%br
 .row-fluid
 	#map_canvas
 
