@@ -50,15 +50,29 @@ $(function(){
   // -------------------------
   taxon = [];
   $('input[type=checkbox]').change(function(){
-    if($(this).attr('checked')){      
-      taxon.push($(this).attr('name').toLowerCase());
-      filterProducts(taxon);
+    taxName = $(this).attr('name').toLowerCase();      
+    if($(this).attr('checked')){
+      if(taxName.indexOf(' ') >= 0) {
+        taxNameJoin = taxName.split(' ').join('-');
+        taxon.push(taxNameJoin);        
+        filterProducts(taxon);
+      }else{
+        taxon.push(taxName);
+        filterProducts(taxon);
+      };
     }else{
-      var remove = $(this).attr('name').toLowerCase();
-      taxon = $.grep(taxon, function(value) {
-        return value != remove;
-      });
-      filterProducts(taxon);
+      if(taxName.indexOf(' ') >= 0) {
+        taxNameJoin = taxName.split(' ').join('-');
+        taxon = $.grep(taxon, function(value) {
+          return value != taxNameJoin;
+        });
+        filterProducts(taxon);
+      }else{
+        taxon = $.grep(taxon, function(value) {
+          return value != taxName;
+        });
+        filterProducts(taxon);        
+      };
     }
   });
   // -------------------------
