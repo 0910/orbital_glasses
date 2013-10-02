@@ -7,6 +7,7 @@
 			= link_to(types_path(:types => tax)) do
 				= tax
 			- @taxon = tax
+		= link_to('Volver al catálogo', types_path, class: 'backtocat')
 .row-fluid.prod
 	.span6.prodphoto
 		- @product.images.each do |image|

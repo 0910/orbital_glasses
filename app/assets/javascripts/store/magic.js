@@ -27,6 +27,10 @@ $(function(){
     event.preventDefault();
     $('.treemenu').slideToggle();
   });
+  $('.backtocat').click(function(event){
+    event.preventDefault();
+    window.history.back();
+  });
   $('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
   $('.variant a').tooltip();
   /*$('.twitterfeed').tweet({

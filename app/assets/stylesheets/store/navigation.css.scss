@@ -127,12 +127,12 @@
 	a:hover{
 		text-decoration: none;
 	}
-	a#filters, a.back{
+	a#filters, a.back, a.backtocat{
 		float:right;
 		cursor:pointer;
 		color:#808080;
 	}
-	a#filters:hover, a.back:hover{
+	a#filters:hover, a.back:hover, a.backtocat:hover{
 		background:#fff;
 		color:#606060;
 	}
