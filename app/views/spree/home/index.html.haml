@@ -14,53 +14,46 @@
 	.row-fluid
 		.span4
 			.row-fluid
+				%a.box.largebox(href="#")
+					.ph
+						= image_tag("sol_hombre.jpg")
+					.over
+						%h1 SUNGLASSES HOMBRE
+						%p show collection
+			.row-fluid
 				%a.box.midbox(href="#")
 					.ph
 						= image_tag("small01.jpg")
 					.over
-						%h1 Receta Mujer
-						%p ver colección
-			.row-fluid
-				%a.box.largebox(href="#")
-					.ph
-						= image_tag("large01.jpg")
-					.over
-						%h1 RECETA HOMBRE
-						%p ver colección
+						%h1 PRESCRIPTION Mujer
+						%p show collection
 		.span4
-			.row-fluid
-				%a.box.largebox(href="#")
-					.ph
-						= image_tag("relojete.jpg")
-					.over
-						%h1 RELOJES
-						%p ver colección
 			.row-fluid.box.midbox
 				= link_to(stores_path, class: 'box midbox') do
 					.ph
-						= image_tag("sol_hombre.jpg")
+						= image_tag("large01.jpg")
 					.over
-						%h1 STORES
-						%p visita online
-		.span4
+						%h1 PRESCRIPTION HOMBRE
+						%p show collection
 			.row-fluid
-				= link_to(types_path, class: 'box midbox') do
-					.ph
-						= image_tag("sol_hombre.jpg")
-					.over
-						%h1 SOL HOMBRE
-						%p ver colección
-			.row-fluid
-				= link_to(teams_path, class: 'box midbox') do
+				%a.box.largebox(href="#")
 					.ph
 						= image_tag("team.jpg")
 					.over
 						%h1 TEAM
-						%p ver integrantes
+						%p show riders
+		.span4
 			.row-fluid
-				= link_to(types_path, class: 'box midbox') do
+				= link_to(types_path, class: 'box largebox') do
 					.ph
 						= image_tag("sol_mujer.jpg")
 					.over
-						%h1 SOL MUJER
-						%p ver colección
+						%h1 SUNGLASSES MUJER
+						%p show collection
+			.row-fluid
+				= link_to(teams_path, class: 'box midbox') do
+					.ph
+						= image_tag("locales.jpg")
+					.over
+						%h1 STORES
+						%p where we are
