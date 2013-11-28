@@ -1,4 +1,4 @@
-- @mix.build_image if @mix.image.nil?
+- @notice.build_image if @notice.image.nil?
 %fieldset
   = f.field_container :title do
     = f.label :title, :title
@@ -23,15 +23,10 @@
     = f.text_field :url, :class => 'fullwidth title'
     = f.error_message_on :url
 
-  = f.field_container :dj_name do
-    = f.label :dj_name, 'Dj Name'
-    = f.text_field :dj_name, :class => 'fullwidth title'
-    = f.error_message_on :dj_name
-
-  = f.fields_for :image, @mix.image do |fi|
-    - if @mix.image.persisted?
+  = f.fields_for :image, @notice.image do |fi|
+    - if @notice.image.persisted?
       %div
-        = image_tag @mix.image.attachment.url(:product), class: 'preview'
+        = image_tag @notice.image.attachment.url(:product), class: 'preview'
     = fi.label :attachment, 'Image'
     = fi.file_field 'attachment'
 

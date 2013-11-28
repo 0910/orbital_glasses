@@ -1,0 +1,2 @@
+$("#new_notice").html('<%= escape_javascript(render :template => "spree/admin/notices/new", :formats => [:html], :handlers => [:haml]) %>');
+$("#admin_new_notice").parent().hide();

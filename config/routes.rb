@@ -70,7 +70,7 @@ Spree::Core::Engine.routes.draw do
   
 
   namespace 'admin' do
-    resources :mixes
+    resources :notices
     resources :videos
     resources :stores
     resources :teams
@@ -78,7 +78,7 @@ Spree::Core::Engine.routes.draw do
   end
 
 
-  resources :mixes, only: [:index, :show]
+  resources :notices, only: [:index, :show]
   resources :videos, only: [:index, :show]
   resources :stores, only: [:index, :show]
   resources :teams, only: [:index, :show]

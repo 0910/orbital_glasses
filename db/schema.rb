@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130918002757) do
+ActiveRecord::Schema.define(:version => 20131127184648) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -195,11 +195,10 @@ ActiveRecord::Schema.define(:version => 20130918002757) do
     t.datetime "updated_at",                    :null => false
   end
 
-  create_table "spree_mixes", :force => true do |t|
+  create_table "spree_notices", :force => true do |t|
     t.string   "title",       :null => false
     t.string   "description", :null => false
     t.string   "url",         :null => false
-    t.string   "dj_name",     :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

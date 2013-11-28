@@ -1,17 +1,17 @@
 module Spree
-  class MixesController < BaseController
+  class NoticesController < BaseController
     layout 'spree/layouts/spree_application'
     if defined?(Spree::Dash)
       helper 'spree/analytics'
     end
 
     def index
-      @mixes = Mix.all
+      @notices = Notice.all
 
     end
 
     def show
-      @mix = Mix.find(params[:id])
+      @notice = Notice.find(params[:id])
     end
   end
 end

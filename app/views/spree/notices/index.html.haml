@@ -1,0 +1,16 @@
+%h1 Listing notices
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @notices.each do |notice|
+    %tr
+      %td 
+        = notice.title
+      %td
+        = notice.description
+      %td 
+        =  link_to 'Show', notice
