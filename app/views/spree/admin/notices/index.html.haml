@@ -18,7 +18,9 @@
     %tr
       %td= notice.title
       %td= notice.url
-      %td= image_tag(notice.image.attachment.url(:small)) if notice.image
+      %td
+        - unless notice.images.empty?
+          = image_tag(notice.images.first.attachment.url(:small))
       %td.actions
         = link_to_edit notice, :class => 'edit'
         &nbsp;

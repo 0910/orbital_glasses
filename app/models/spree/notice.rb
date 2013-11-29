@@ -3,10 +3,10 @@ module Spree
 	  validates :title, presence: true
     validates :description, presence: true
     validates :url, format: URI::regexp(%w(http https))
-    validates :image, presence: true
-    has_one :image, :as => :viewable, :order => :position, :dependent => :destroy
+    validates :images, presence: true
+    has_many :images, :as => :viewable, :order => :position, :dependent => :destroy
 
-    accepts_nested_attributes_for :image
-    attr_accessible :title, :description, :image_attributes, :url
+    accepts_nested_attributes_for :images, allow_destroy: true
+    attr_accessible :title, :description, :images_attributes, :url
 	end
 end

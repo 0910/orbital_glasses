@@ -7,14 +7,14 @@ function addImages(){
 	addImage = $('.admin .add-image');
 	section = $('.admin form fieldset').attr("class");
 
-	lastImage = $('#'+section+'_images_field input:last-child').attr('id');
+	lastImage = $('#'+section+'_images_field input:last').attr('id');
 	if (lastImage == null) {
 
 	}else{
 	// Obtenemos el ultimo index de imagenes si existe
 		if (lastImage.length) {
 			lastImageSplit = lastImage.split('_');
-			i = lastImageSplit[3] ;
+			i = lastImageSplit[3];
 			i++;
 		}else{
 			i = 1;

@@ -1,5 +1,6 @@
-- @notice.build_image if @notice.image.nil?
-%fieldset
+- @notice.build_image if @notice.images.nil?
+/ Agregamos el nombre de la seccion para poder identificarla y agregar imagenes
+%fieldset.notice
   = f.field_container :title do
     = f.label :title, :title
     %span.required *
@@ -23,10 +24,24 @@
     = f.text_field :url, :class => 'fullwidth title'
     = f.error_message_on :url
 
-  = f.fields_for :image, @notice.image do |fi|
-    - if @notice.image.persisted?
-      %div
-        = image_tag @notice.image.attachment.url(:product), class: 'preview'
-    = fi.label :attachment, 'Image'
-    = fi.file_field 'attachment'
+  = f.field_container :images do
+    - unless @notice.images.nil?
+      .row-fluid
+        - @notice.images.each do |image|
+          = f.fields_for :images, image do |ff|
+            .span3
+              .ph
+                = image_tag(image.attachment.url(:small))
+              .destroy
+                = ff.label 'Destroy?'
+                = ff.check_box :_destroy
+    = f.fields_for :images, @notice.images.build do |fi|
+      %div.images_field
+        .row-fluid
+          .span4
+            = fi.label :attachment, 'Image'
+            = fi.file_field 'attachment'
+    
+  .row-fluid            
+    = f.button 'Add new image', :class => 'add-image'
 
