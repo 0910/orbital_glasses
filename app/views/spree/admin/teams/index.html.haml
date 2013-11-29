@@ -18,7 +18,8 @@
     %tr
       %td= team.title
       %td= team.description.truncate(80)
-      %td= image_tag(team.images.first.attachment.url(:small)) if team.images
+      - unless team.images.empty?
+        %td= image_tag(team.images.first.attachment.url(:small))
       %td.actions
         = link_to_edit team, :class => 'edit'
         &nbsp;
