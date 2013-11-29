@@ -30,6 +30,9 @@
         - @notice.images.each do |image|
           = f.fields_for :images, image do |ff|
             .span3
+              .cover
+                = ff.label :cover
+                = ff.check_box :cover, :class => 'cover_select'
               .ph
                 = image_tag(image.attachment.url(:small))
               .destroy
