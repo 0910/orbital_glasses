@@ -18,7 +18,9 @@
     %tr
       %td= video.title
       %td= video.url
-      %td= image_tag(video.images.first.attachment.url(:small)) if video.images
+      %td
+        - unless video.images.empty?
+          = image_tag(video.images.first.attachment.url(:small))
       %td.actions
         = link_to_edit video, :class => 'edit'
         &nbsp;

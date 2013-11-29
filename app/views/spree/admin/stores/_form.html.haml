@@ -20,6 +20,8 @@
 
   = f.field_container :address do
     = f.label :address, 'Address'
+    %span.required *
+    %br
     %div
       En base a esta dirección se mostrará el mapa del store, debe contener la calle, la altura, el barrio y la ciudad, por ejemplo:</br>Pringles 1395, Palermo, Buenos Aires, Argentina.
     = f.text_field :address, :class => 'fullwidth title'
