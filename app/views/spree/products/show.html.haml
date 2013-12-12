@@ -12,6 +12,10 @@
 	.span6.prodphoto
 		- @product.images.each do |image|
 			= link_to image_tag(image.attachment.url(:large)), image.attachment.url(:original), class: 'cloud-zoom', rel:'adjustX: 0, adjustY:0'
+		- @variants = @product.variants.active
+		- @variants.each do |variant|
+			- variant.images.each do |image|
+				= link_to image_tag(image.attachment.url(:large)), image.attachment.url(:original), class: 'cloud-zoom', rel:'adjustX: 0, adjustY:0'
 	.span6.proddesc
 		%h1 #{@product.name}
 		%p=raw product_description(@product).gsub("\n","<br/>") rescue t(:product_has_no_description)
@@ -29,13 +33,22 @@
 	.span12.variants
 		.variant
 			%p variantes
-		- @variants = @product.variants.active
+		- i = 1
+		- @product.images.each do |image|
+			=# link_to image_tag(image.attachment.url(:large)), image.attachment.url(:original), class: 'cloud-zoom', rel:'adjustX: 0, adjustY:0'
+			.variant
+				= link_to('', :data => {:toggle => 'tooltip', :placement => 'top', :title => image.alt}, :class => i) do
+					.ph
+						= image_tag(image.attachment.url(:small))
+				- i+=1
+		-# @variants = @product.variants.active
 		- @variants.each do |variant|
 			- variant.images.each do |image|
 				.variant
-					= link_to('', :data => {:toggle => 'tooltip', :placement => 'top', :title => image.alt}) do
+					= link_to('', :data => {:toggle => 'tooltip', :placement => 'top', :title => image.alt }, :class => i) do
 						.ph
 							= image_tag(image.attachment.url(:small))
+					- i+=1
 .row-fluid
 	.span12.title
 		%p Otros modelos de esta coleccion
@@ -49,5 +62,5 @@
 					.ph			
 						= image_tag(prod_rel.images.first.attachment.url(:large))
 					.over
-						%h1 #{@product.name}
+						%h1 #{prod_rel.name}
 						%p ver detalle

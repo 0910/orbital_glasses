@@ -83,6 +83,14 @@ $(function(){
   // End filtro productos
   // -------------------------
 
+
+  $('.variants a').click(function(e){
+    e.preventDefault();
+    $('.prodphoto #wrap').fadeOut(100);
+    $('.prodphoto #wrap:nth-child('+$(this).attr('class')+')').fadeIn(200);
+    //alert($(this).attr('class'));
+  })
+
 });
 
 $(window).load(function () {
