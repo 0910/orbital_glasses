@@ -1,6 +1,20 @@
 %p#notice
 	= notice
-%h1
-	= @notice.title
-%p #{@notice.description}
-= link_to 'Back', notices_path
+.row-fluid
+	.span12.seriesnav
+		%h1
+			= @notice.title
+		= link_to 'Volver', notices_path, class:'back'
+.row-fluid
+	%ul.bxslider
+		- @notice.images.each do |image|
+			%li.item
+				= image_tag(image.attachment.url(:original))
+.row-fluid.fullbox
+	%p
+		- @description.each do |description|
+			= description
+			%br
+.row-fluid.fullbox
+	%P
+		= link_to @notice.url, @notice.url

@@ -1,16 +1,10 @@
-%h1 Listing notices
-
-%table
-  %tr
-    %th
-    %th
-    %th
-
+.row-fluid
   - @notices.each do |notice|
-    %tr
-      %td 
-        = notice.title
-      %td
-        = notice.description
-      %td 
-        =  link_to 'Show', notice
+    .span3
+      = link_to(notice, class: 'box smallbox') do
+        - unless notice.images.empty?
+          .ph
+            = image_tag(notice.images.first.attachment.url(:large))
+          .over
+            %h1= notice.title
+            %p ver detalle

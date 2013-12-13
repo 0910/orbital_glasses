@@ -12,6 +12,8 @@ module Spree
 
     def show
       @notice = Notice.find(params[:id])
+      @description = @notice.description.split(/\r\n/)
+
     end
   end
 end
