@@ -1,10 +1,13 @@
 .row-fluid.contact_us
-  .span6
-    %h2 Envianos tu consulta
-    = semantic_form_for @message, :url => contacts_path do |f| 
-      = f.input :name, :label => false, :input_html => {:placeholder => "Nombre"}
-      = f.input :subject, :label => false, :input_html => {:placeholder => "Asunto"}
-      = f.input :email, :label => false, :input_html => {:placeholder => "E-mail"}
-      = f.input :body, :as => :text,:label => false, :input_html => {:placeholder => "Commentarios...", :rows => 4}
-      = f.input :tipo_consulta, :as => :radio, :collection => ['Consulta', 'Queja', 'Reclamo']
-      = f.button :Enviar
+  .row-fluid
+    .span12.seriesnav
+      %h1 Envianos tu consulta
+  .row-fluid
+    .span6
+      = semantic_form_for @message, :url => contacts_path do |f| 
+        = f.input :name, :label => false, :input_html => {:placeholder => "Nombre"}
+        = f.input :subject, :label => false, :input_html => {:placeholder => "Asunto"}
+        = f.input :email, :label => false, :input_html => {:placeholder => "E-mail"}
+        = f.input :body, :as => :text,:label => false, :input_html => {:placeholder => "Comentarios...", :rows => 4}
+        = f.input :tipo_consulta, :as => :radio, :collection => ['Consulta', 'Queja', 'Reclamo']
+        = f.button :Enviar
