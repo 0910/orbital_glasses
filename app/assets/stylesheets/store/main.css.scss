@@ -506,12 +506,12 @@ button, a.button {
   margin:0 20px;
 }
 
-.radio, li.choice{
+.radio, #new_message li li.choice{
 	margin: 0;
 	padding: 0;
 }
 
-.choice .label{
+#new_message li li.choice label{
     background-color: transparent;
     color: #333333;
     display: inline-block;
@@ -520,5 +520,7 @@ button, a.button {
     vertical-align: baseline;
     white-space: nowrap;
     margin:0;
-
   }
+#new_message li li.choice input{
+	margin-right: 5px;
+}
