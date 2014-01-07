@@ -33,7 +33,7 @@
               %h1= product.name
               %p ver detalle
 :javascript
-  producttype = $('.seriesnav').find('h1').text();
+  producttype = $('.seriesnav').find('h1').text().replace(/^\s+|\s+$/g,'').toLowerCase();;
   if (producttype == 'watches'){
     $('.smallbox').addClass('watchbox').removeClass('smallbox');
     $('.prodphoto').css('height', '345px');
