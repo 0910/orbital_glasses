@@ -221,6 +221,48 @@ FONT
 	margin:0;
 	padding:2px 0;
 }
+
+.watchbox {
+    height: 350px;
+}
+.watchbox .over {
+    margin-top: -350px;
+    width: 99.8%;
+}
+.watchbox .over, .watchbox .ph {
+    height: 350px;
+    overflow: hidden;
+}
+.span3 .watchbox .ph {
+    border-right: 1px solid #DCDCDC;
+}
+.span3:nth-child(4n) .watchbox .ph {
+    border-right: 1px solid #FFFFFF;
+}
+.watchbox .over h1 {
+    color: #202020;
+    font: 13px 'DINPro-Bold',helvetica,arial,sans-serif;
+    letter-spacing: 2.6pt;
+    margin: 155px 0 0;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+.watchbox .over p {
+    color: #AAAAAA;
+    font: 11px 'DINPro-Regular',helvetica,arial,sans-serif;
+    letter-spacing: 2pt;
+    margin: 0;
+    padding: 2px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+.watchwrap{
+	width:50%;
+	margin-left:25%;
+}
 .midbox{
 	height:240px;
 }
@@ -466,7 +508,6 @@ FONT
 		cursor:pointer;
 	}
 }
-
 #new_message li {
 	list-style:none;
 	margin:10px 20px;
@@ -504,26 +545,4 @@ button, a.button {
   text-shadow: none;
   vertical-align: top;
   margin:0 20px;
-}
-
-.radio, #new_message li li.choice{
-	margin: 0;
-	padding: 0;
-}
-
-#new_message li li.choice label{
-    background-color: transparent;
-    color: #333333;
-    display: inline-block;
-    font:11px/17px 'DINPro-Regular', helvetica, arial, sans-serif;
-    text-shadow: none;
-    vertical-align: baseline;
-    white-space: nowrap;
-    margin:0;
-  }
-#new_message li li.choice input{
-	margin-right: 5px;
-}
-#new_message{
-	margin-bottom: 20px;
 }

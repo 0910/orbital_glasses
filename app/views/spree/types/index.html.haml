@@ -32,3 +32,8 @@
             .over
               %h1= product.name
               %p ver detalle
+:javascript
+  producttype = $('.seriesnav').find('h1').text();
+  if (producttype = 'watches'){
+    $('.smallbox').addClass('watchbox').removeClass('smallbox');
+  }
