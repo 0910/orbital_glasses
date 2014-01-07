@@ -64,8 +64,6 @@
 					.over
 						%h1 #{prod_rel.name}
 						%p ver detalle
+
 :javascript
-	producttype = $('.seriesnav').find('a').eq(0).text();
-	if (producttype = 'watches'){
-	  $('.wrap').addClass('watchwrap');
-	}
+	producttype = $('.seriesnav').find('a').eq(0).text().replace(/^\s+|\s+$/g,'');

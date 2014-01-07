@@ -34,6 +34,8 @@
               %p ver detalle
 :javascript
   producttype = $('.seriesnav').find('h1').text();
-  if (producttype = 'watches'){
+  if (producttype == 'watches'){
     $('.smallbox').addClass('watchbox').removeClass('smallbox');
+    $('.prodphoto').css('height', '345px');
+    $('.variant').css('height', '98px');
   }
