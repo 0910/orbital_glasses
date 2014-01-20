@@ -14,14 +14,14 @@
 	.row-fluid
 		.span4
 			.row-fluid
-				%a.box.largebox(href="#")
+				= link_to(types_path(:types => 'Sunglasses'), :class => 'box largebox') do
 					.ph
 						= image_tag("sol_hombre.jpg")
 					.over
 						%h1 SUNGLASSES HOMBRE
 						%p show collection
 			.row-fluid
-				%a.box.midbox(href="#")
+				= link_to(types_path(:types => 'Prescription'), :class => 'box midbox') do
 					.ph
 						= image_tag("small01.jpg")
 					.over
@@ -29,14 +29,14 @@
 						%p show collection
 		.span4
 			.row-fluid.box.midbox
-				= link_to(stores_path, class: 'box midbox') do
+				= link_to(stores_path(:types => 'Prescription'), :class => 'box midbox') do
 					.ph
 						= image_tag("large01.jpg")
 					.over
 						%h1 PRESCRIPTION HOMBRE
 						%p show collection
 			.row-fluid
-				%a.box.largebox(href="#")
+				= link_to(teams_path, :class => 'box largebox') do
 					.ph
 						= image_tag("team.jpg")
 					.over
@@ -51,7 +51,7 @@
 						%h1 SUNGLASSES MUJER
 						%p show collection
 			.row-fluid
-				= link_to(teams_path, class: 'box midbox') do
+				= link_to(stores_path, :class => 'box midbox') do
 					.ph
 						= image_tag("locales.jpg")
 					.over
