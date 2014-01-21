@@ -39,3 +39,12 @@
     $('.prodphoto').css('height', '345px');
     $('.variant').css('height', '98px');
   }
+
+
+  if(urlParams['gender']=='hombre'){
+    $('#Hombre').attr('checked','checked');
+    filterProducts('hombre');
+  }else if(urlParams['gender']=='mujer'){
+    $('#Mujer').attr('checked','checked');
+    filterProducts('mujer');
+  };

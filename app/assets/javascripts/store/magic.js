@@ -75,7 +75,7 @@ $(function(){
         taxon = $.grep(taxon, function(value) {
           return value != taxName;
         });
-        filterProducts(taxon);        
+        filterProducts(taxon);
       };
     }
   });
@@ -90,6 +90,9 @@ $(function(){
     $('.prodphoto #wrap:nth-child('+$(this).attr('class')+')').fadeIn(200);
     //alert($(this).attr('class'));
   })
+
+  var urlParams;
+
 
 });
 
@@ -119,3 +122,15 @@ function filterProducts(taxon){
   }
 }
 
+
+(window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
