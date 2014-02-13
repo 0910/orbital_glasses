@@ -219,25 +219,21 @@ function filterProducts(){
       for ( var i_a = 0; i_a < genero.length; i_a = i_a + 1 ) {
         if($(this).find('p.taxons').text().match(genero[i_a])){
           productTaxons++;
-          console.log('genero ok');
         }
       };
       for ( var i_b = 0; i_b < estilo.length; i_b = i_b + 1 ) {
         if($(this).find('p.taxons').text().match(estilo[i_b])){
           productTaxons++;
-          console.log('estilo ok');
         }
       };
       for ( var i_c = 0; i_c < material.length; i_c = i_c + 1 ) {
         if($(this).find('p.taxons').text().match(material[i_c])){
           productTaxons++;
-          console.log('material ok');
         }
       };
       for ( var i_d = 0; i_d < calibre.length; i_d = i_d + 1 ) {
         if($(this).find('p.taxons').text().match(calibre[i_d])){
           productTaxons++;
-          console.log('calibre ok');
         }
       };
       if(productTaxons==taxons){
