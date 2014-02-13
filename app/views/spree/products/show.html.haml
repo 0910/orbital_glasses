@@ -18,7 +18,7 @@
 				= link_to image_tag(image.attachment.url(:large)), image.attachment.url(:original), class: 'cloud-zoom', rel:'adjustX: 0, adjustY:0'
 	.span6.proddesc
 		%h1 #{@product.name}
-		%p=raw product_description(@product).gsub("\n","<br/>") rescue t(:product_has_no_description)
+		=raw product_description(@product).gsub("\n","<br/>") rescue t(:product_has_no_description)
 		.formbox
 			= form_for :order, url: populate_orders_url do |f|
 				.formitem
@@ -67,3 +67,8 @@
 
 :javascript
 	producttype = $('.seriesnav').find('a').eq(0).text().replace(/^\s+|\s+$/g,'');
+	if (producttype == 'watches'){
+		$('.wrap').addClass('watchwrap').removeClass('smallbox');
+		$('.variant').css('height', '98px');
+		$('.variants p').css('margin-top', '18px');
+	}

@@ -83,6 +83,9 @@ FONT
 				 asset-url('DINPro-Bold.ttf', font) format('truetype'), 
 				 asset-url('DINPro-Bold.svg', font) format('svg');
 }
+.whitebg{
+	background:#fff;
+}
 #notice{
 	margin:0;
 	padding:0;
@@ -145,6 +148,7 @@ FONT
 	width:159.166667px;
 	float:left;
 	cursor:pointer;
+	border-bottom:1px solid #DCDCDC;
 	.ph{
 		border-right:1px solid #dcdcdc;
 	}
@@ -160,6 +164,7 @@ FONT
 }
 .minibox .over{
 	margin-top:-100px;
+	width:99.8%;
 }
 .minibox .over, .smallbox .ph{
 	height: 100px;
@@ -192,8 +197,10 @@ FONT
 	width:99.8%;
 }
 .smallbox .over, .smallbox .ph{
+	width:240px;
 	height: 151px;
 	overflow:hidden;
+	background-size:cover;
 }
 .span3 .smallbox .ph{
 	border-right:1px solid #dcdcdc;
@@ -221,7 +228,9 @@ FONT
 	margin:0;
 	padding:2px 0;
 }
-
+.product{
+	border-bottom:1px solid #DCDCDC;
+}
 .variants .variant .ph{
   text-align: center;
 }
@@ -512,16 +521,21 @@ FONT
 		cursor:pointer;
 	}
 }
+.contact_us{
+	background:#fff;
+}
 #new_message li {
 	list-style:none;
-	margin:10px 20px;
+	margin:20px 20px;
 	input, textarea {
 		margin:0;
 		font:10px/18px 'DINPro-Regular', helvetica, arial, sans-serif;
+		border-radius:0px;
 	}
   .radio, .checkbox{
     padding-left:0px;
   }
+
   .label, .badge {
     background-color: transparent;
     color: #333333;
@@ -549,4 +563,24 @@ button, a.button {
   text-shadow: none;
   vertical-align: top;
   margin:0 20px;
+}
+.radio, #new_message li li.choice {
+    margin: 0;
+    padding: 0;
+}
+#new_message li li.choice label {
+    background-color: rgba(0, 0, 0, 0);
+    color: #333333;
+    display: inline-block;
+    font: 11px/17px 'DINPro-Regular',helvetica,arial,sans-serif;
+    margin: 0;
+    text-shadow: none;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+#new_message li li.choice input {
+    margin-right: 5px;
+}
+#new_message {
+    margin-bottom: 20px;
 }

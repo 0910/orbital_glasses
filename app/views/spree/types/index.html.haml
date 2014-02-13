@@ -10,7 +10,7 @@
             .row-fluid.treemenu
               - @taxons.each do |tax_1|
                 - if tax_1.parent_id == tax.id
-                  .span3
+                  .span3.filtertop{:id => tax_1.name}
                     %h4= tax_1.name
                     - @taxons.each do |tax_2|
                       - if tax_2.parent_id == tax_1.id
@@ -22,8 +22,8 @@
     - @tax_name = ''
     - unless product.deleted_at!=nil
       - product.taxons.each do |taxon|
-        - @tax_name += ' '+taxon.permalink
-      .span3.product
+        - @tax_name += ' '+taxon.name
+      .span3.product{:class => @tax_name}
         %p.hidden.taxons=@tax_name
         = link_to(product, class: 'box smallbox') do
           - unless product.images.empty?
@@ -37,7 +37,6 @@
   if (producttype == 'watches'){
     $('.smallbox').addClass('watchbox').removeClass('smallbox');
     $('.prodphoto').css('height', '345px');
-    $('.variant').css('height', '98px');
   }
 
 

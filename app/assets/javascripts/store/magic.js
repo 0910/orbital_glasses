@@ -16,7 +16,11 @@ $(function(){
     slideWidth: 960,
     minSlides: 1,
     maxSlides: 5,
+    auto: true,
     slideMargin: 0
+  });
+  $('a.cloud-zoom').click(function(event){
+    event.preventDefault();
   });
   $('.bx-wrapper').hover(function(){
     $(this).find('.bx-controls-direction').fadeIn();
@@ -33,10 +37,17 @@ $(function(){
   });
   $('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
   $('.variant a').tooltip();
+  $('#gototop').click(function(event){
+    event.preventDefault();
+    $('body').stop().animate({"top": 0},{duration:500, easing:'swing'});
+    var body = $("html, body");
+    body.animate({scrollTop:0}, '500', 'swing');
+  });
+
   /*$('.twitterfeed').tweet({
     modpath: '/assets/store/',
     count: 5,
-    username: "emadobao",
+    username: "orbitalvirtual",
     join_text: "auto",
     avatar_size: 48,
     retweets: true,
@@ -52,33 +63,115 @@ $(function(){
   // -------------------------
   // Mostrar / ocultar productos por filtros
   // -------------------------
-  taxon = [];
-  $('input[type=checkbox]').change(function(){
+  genero = [];
+  estilo = [];
+  material = [];
+  calibre = [];
+  $('#genero input[type=checkbox]').change(function(){
     taxName = $(this).attr('name').toLowerCase();      
     if($(this).attr('checked')){
       if(taxName.indexOf(' ') >= 0) {
         taxNameJoin = taxName.split(' ').join('-');
-        taxon.push(taxNameJoin);        
-        filterProducts(taxon);
+        genero.push(taxNameJoin);  
+        filterProducts();
       }else{
-        taxon.push(taxName);
-        filterProducts(taxon);
+        genero.push(taxName);
+        filterProducts();
       };
     }else{
       if(taxName.indexOf(' ') >= 0) {
         taxNameJoin = taxName.split(' ').join('-');
-        taxon = $.grep(taxon, function(value) {
+        genero = $.grep(genero, function(value) {
           return value != taxNameJoin;
         });
-        filterProducts(taxon);
+        filterProducts();
       }else{
-        taxon = $.grep(taxon, function(value) {
+        genero = $.grep(genero, function(value) {
           return value != taxName;
         });
-        filterProducts(taxon);
+        filterProducts();
       };
     }
   });
+  $('#estilo input[type=checkbox]').change(function(){
+    taxName = $(this).attr('name').toLowerCase();      
+    if($(this).attr('checked')){
+      if(taxName.indexOf(' ') >= 0) {
+        taxNameJoin = taxName.split(' ').join('-');
+        estilo.push(taxNameJoin);  
+        filterProducts();
+      }else{
+        estilo.push(taxName);
+        filterProducts();
+      };
+    }else{
+      if(taxName.indexOf(' ') >= 0) {
+        taxNameJoin = taxName.split(' ').join('-');
+        estilo = $.grep(estilo, function(value) {
+          return value != taxNameJoin;
+        });
+        filterProducts();
+      }else{
+        estilo = $.grep(estilo, function(value) {
+          return value != taxName;
+        });
+        filterProducts();
+      };
+    }
+  });
+  $('#material input[type=checkbox]').change(function(){
+    taxName = $(this).attr('name').toLowerCase();      
+    if($(this).attr('checked')){
+      if(taxName.indexOf(' ') >= 0) {
+        taxNameJoin = taxName.split(' ').join('-');
+        material.push(taxNameJoin);  
+        filterProducts();
+      }else{
+        material.push(taxName);
+        filterProducts();
+      };
+    }else{
+      if(taxName.indexOf(' ') >= 0) {
+        taxNameJoin = taxName.split(' ').join('-');
+        material = $.grep(material, function(value) {
+          return value != taxNameJoin;
+        });
+        filterProducts();
+      }else{
+        material = $.grep(material, function(value) {
+          return value != taxName;
+        });
+        filterProducts();
+      };
+    }
+  });
+  $('#calibre input[type=checkbox]').change(function(){
+    taxName = $(this).attr('name').toLowerCase();      
+    if($(this).attr('checked')){
+      if(taxName.indexOf(' ') >= 0) {
+        taxNameJoin = taxName.split(' ').join('-');
+        calibre.push(taxNameJoin);  
+        filterProducts();
+      }else{
+        calibre.push(taxName);
+        filterProducts();
+      };
+    }else{
+      if(taxName.indexOf(' ') >= 0) {
+        taxNameJoin = taxName.split(' ').join('-');
+        calibre = $.grep(calibre, function(value) {
+          return value != taxNameJoin;
+        });
+        filterProducts();
+      }else{
+        calibre = $.grep(calibre, function(value) {
+          return value != taxName;
+        });
+        filterProducts();
+      };
+    }
+  });
+
   // -------------------------
   // End filtro productos
   // -------------------------
@@ -100,28 +193,59 @@ $(window).load(function () {
   $('#notice, #flash_success, #flash_notice').delay(3000).slideUp(200);
 });
 
+function filterProducts(){
 
-function filterProducts(taxon){
-  if(taxon.length == 0){
-    $('.product').fadeIn(500);
-  }else{
+  taxons = 0;
+  var checked_genero = $('#genero input[type="checkbox"]:checked').length;
+  var checked_estilo = $('#estilo input[type="checkbox"]:checked').length;
+  var checked_material = $('#material input[type="checkbox"]:checked').length;
+  var checked_calibre = $('#calibre input[type="checkbox"]:checked').length;
+  if (checked_genero > 0){ taxons++; }
+  if (checked_estilo > 0){ taxons++; }
+  if (checked_material > 0){ taxons++; }
+  if (checked_calibre > 0){ taxons++; }
+
+  // If No Filter Checked
+  if (taxons == 0) {
+    $('.product').fadeIn(500); //show all products
+  } 
+  // If Filter Checked
+  else {
     $('.product').hide();
-    var taxons = taxon.length;
+    productTaxons = 0; //set default to 0
+    
+    //check taxon Genero
     $('.product').each(function(){
-      productTaxons = 0;
-      for ( var i = 0; i < taxon.length; i = i + 1 ) {
-        if($(this).find('p.taxons').text().match(taxon[i])){
+      for ( var i_a = 0; i_a < genero.length; i_a = i_a + 1 ) {
+        if($(this).find('p.taxons').text().match(genero[i_a])){
           productTaxons++;
-        };
-        if(productTaxons==taxons){
-          $(this).fadeIn(500);
+          console.log('genero ok');
         }
       };
-
-    })    
+      for ( var i_b = 0; i_b < estilo.length; i_b = i_b + 1 ) {
+        if($(this).find('p.taxons').text().match(estilo[i_b])){
+          productTaxons++;
+          console.log('estilo ok');
+        }
+      };
+      for ( var i_c = 0; i_c < material.length; i_c = i_c + 1 ) {
+        if($(this).find('p.taxons').text().match(material[i_c])){
+          productTaxons++;
+          console.log('material ok');
+        }
+      };
+      for ( var i_d = 0; i_d < calibre.length; i_d = i_d + 1 ) {
+        if($(this).find('p.taxons').text().match(calibre[i_d])){
+          productTaxons++;
+          console.log('calibre ok');
+        }
+      };
+      if(productTaxons==taxons){
+        $(this).fadeIn(500);
+      }
+    });
   }
 }
-
 
 (window.onpopstate = function () {
     var match,

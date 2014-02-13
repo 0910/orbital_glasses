@@ -1,10 +1,9 @@
-.row-fluid
+.row-fluid.whitebg
   - @teams.each do |team|
     .span3
       = link_to(team, class: 'box smallbox') do
         - unless team.images.empty?
-          .ph
-            = image_tag(team.images.first.attachment.url(:large))
+          .ph{:style => "background-image: url(#{team.images.first.attachment.url(:large)})"} 
           .over
             %h1= team.title
             %p ver detalle

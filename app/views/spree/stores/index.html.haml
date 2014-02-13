@@ -1,10 +1,9 @@
-.row-fluid
+.row-fluid.whitebg
   - @stores.each do |store|
     .span3
       = link_to(store, class: 'box smallbox') do
         - unless store.images.empty?
-          .ph
-            = image_tag(store.images.first.attachment.url(:large))
+          .ph{:style => "background-image: url(#{team.images.first.attachment.url(:large)})"} 
           .over
             %h1= store.title
             %p ver detalle

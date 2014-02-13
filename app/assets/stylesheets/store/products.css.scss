@@ -9,11 +9,16 @@
 	}
 }
 .proddesc{
+	font:11px/20px 'DINPro-Bold', helvetica, arial, sans-serif;
+	color:#aaa;
+	text-transform: uppercase;
+	padding: 0 5%;
+	letter-spacing: 1pt;
 	h1{
 		font:24px 'DINPro-Bold', helvetica, arial, sans-serif;
 		color:#666;
 		text-transform: uppercase;
-		margin:7% 5% 0 5%;
+		margin:7% 0 0 0;
 		letter-spacing: 2pt;
 	}
 	p{
@@ -46,7 +51,6 @@
 	.variant:first-child{
 		border-left:0px;
 		width:120px;
-		height:81px;
 		margin:0;
 	}
 }

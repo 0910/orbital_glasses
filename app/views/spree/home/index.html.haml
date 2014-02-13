@@ -14,29 +14,21 @@
 	.row-fluid
 		.span4
 			.row-fluid
-				= link_to(types_path(:types => 'Sunglasses', :gender => 'hombre'), :class => 'box largebox') do
+				= link_to(types_path(:types => 'Sunglasses', :gender => 'hombre'), :class => 'box midbox') do
 					.ph
-						= image_tag("sol_hombre.jpg")
+						= image_tag("solhombre.jpg")
 					.over
-						%h1 SUNGLASSES HOMBRE
+						%h1 SUNGLASSES MEN
 						%p show collection
 			.row-fluid
-				= link_to(types_path(:types => 'Prescription', :gender => 'mujer'), :class => 'box midbox') do
+				= link_to('products/zeta-1-4', :class => 'box midbox') do
 					.ph
-						= image_tag("small01.jpg")
+						= image_tag("zetaseries.jpg")
 					.over
-						%h1 PRESCRIPTION Mujer
-						%p show collection
-		.span4
-			.row-fluid.box.midbox
-				= link_to(types_path(:types => 'Prescription', :gender => 'hombre'), :class => 'box midbox') do
-					.ph
-						= image_tag("large01.jpg")
-					.over
-						%h1 PRESCRIPTION HOMBRE
-						%p show collection
+						%h1 ZETA SERIES
+						%p show product
 			.row-fluid
-				= link_to(teams_path, :class => 'box largebox') do
+				= link_to(teams_path, :class => 'box midbox') do
 					.ph
 						= image_tag("team.jpg")
 					.over
@@ -44,16 +36,45 @@
 						%p show riders
 		.span4
 			.row-fluid
-				= link_to(types_path(:types => 'Sunglasses', :gender => 'mujer'), class: 'box largebox') do
+				= link_to(types_path(:types => 'Watches'), :class => 'box midbox') do
 					.ph
-						= image_tag("sol_mujer.jpg")
+						= image_tag("watches.jpg")
 					.over
-						%h1 SUNGLASSES MUJER
+						%h1 WATCHES
+						%p show collection
+			.row-fluid
+				= link_to(notices_path, :class => 'box midbox') do
+					.ph
+						= image_tag("noticias.jpg")
+					.over
+						%h1 NEWS
+						%p show news
+			.row-fluid
+				= link_to(types_path(:types => 'Prescription', :gender => 'hombre'), :class => 'box midbox') do
+					.ph
+						= image_tag("large01.jpg")
+					.over
+						%h1 PRESCRIPTION MEN
+						%p show collection
+		.span4
+			.row-fluid
+				= link_to(types_path(:types => 'Sunglasses', :gender => 'mujer'), :class => 'box midbox') do
+					.ph
+						= image_tag("solmujer.jpg")
+					.over
+						%h1 SUNGLASSES WOMEN
+						%p show collection
+			.row-fluid
+				= link_to(types_path(:types => 'Prescription', :gender => 'mujer'), :class => 'box midbox') do
+					.ph
+						= image_tag("recetamujer.jpg")
+					.over
+						%h1 PRESCRIPTION WOMEN
 						%p show collection
 			.row-fluid
 				= link_to(stores_path, :class => 'box midbox') do
 					.ph
-						= image_tag("locales.jpg")
+						= image_tag("stores.jpg")
 					.over
 						%h1 STORES
-						%p where we are
+						%p show stores
