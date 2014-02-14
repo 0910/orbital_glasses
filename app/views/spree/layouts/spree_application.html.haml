@@ -6,7 +6,7 @@
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 		= javascript_include_tag "http://maps.googleapis.com/maps/api/js?key=AIzaSyAoAqRFSg4SPOGlkeJumobsLgCYKIAAEM0&sensor=false"  
-	%body{controller: controller_name, action: action_name, :onload => "initialize()"}
+	%body{controller: controller_name, action: action_name}
 		.container
 			= render 'spree/shared/navigation'
 			.row-fluid

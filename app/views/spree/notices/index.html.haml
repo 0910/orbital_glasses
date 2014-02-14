@@ -3,7 +3,7 @@
     .span3
       = link_to(notice, class: 'box smallbox') do
         - unless notice.images.empty?
-          .ph{:style => "background-image: url(#{team.images.first.attachment.url(:large)})"} 
+          .ph{:style => "background-image: url(#{notice.images.first.attachment.url(:large)})"} 
           .over
             %h1= notice.title
             %p ver detalle
