@@ -44,22 +44,6 @@ $(function(){
     body.animate({scrollTop:0}, '500', 'swing');
   });
 
-  /*$('.twitterfeed').tweet({
-    modpath: '/assets/store/',
-    count: 5,
-    username: "orbitalvirtual",
-    join_text: "auto",
-    avatar_size: 48,
-    retweets: true,
-    auto_join_text_default: "", 
-    auto_join_text_ed: "",
-    auto_join_text_ing: "",
-    auto_join_text_reply: "",
-    auto_join_text_url: "",
-    loading_text: "Loading <a href=\"http://twitter.com/rolle\">my</a> Cargando Tweets...",
-    template: '<div class="the-tweet">{text} {time} <a class="link" target="_blank" href="https://twitter.com/LaliMusica"></a></div>'
-  });*/
-
   // -------------------------
   // Mostrar / ocultar productos por filtros
   // -------------------------
@@ -68,11 +52,12 @@ $(function(){
   material = [];
   calibre = [];
   $('#genero input[type=checkbox]').change(function(){
+    console.log('genero selected');
     taxName = $(this).attr('name').toLowerCase();      
     if($(this).attr('checked')){
       if(taxName.indexOf(' ') >= 0) {
         taxNameJoin = taxName.split(' ').join('-');
-        genero.push(taxNameJoin);  
+        genero.push(taxNameJoin);
         filterProducts();
       }else{
         genero.push(taxName);
@@ -94,6 +79,7 @@ $(function(){
     }
   });
   $('#estilo input[type=checkbox]').change(function(){
+    console.log('estilo selected');
     taxName = $(this).attr('name').toLowerCase();      
     if($(this).attr('checked')){
       if(taxName.indexOf(' ') >= 0) {
@@ -120,6 +106,7 @@ $(function(){
     }
   });
   $('#material input[type=checkbox]').change(function(){
+    console.log('material selected');
     taxName = $(this).attr('name').toLowerCase();      
     if($(this).attr('checked')){
       if(taxName.indexOf(' ') >= 0) {
@@ -146,6 +133,7 @@ $(function(){
     }
   });
   $('#calibre input[type=checkbox]').change(function(){
+    console.log('calibre selected');
     taxName = $(this).attr('name').toLowerCase();      
     if($(this).attr('checked')){
       if(taxName.indexOf(' ') >= 0) {
@@ -196,10 +184,10 @@ $(window).load(function () {
 function filterProducts(){
 
   taxons = 0;
-  var checked_genero = $('#genero input[type="checkbox"]:checked').length;
-  var checked_estilo = $('#estilo input[type="checkbox"]:checked').length;
-  var checked_material = $('#material input[type="checkbox"]:checked').length;
-  var checked_calibre = $('#calibre input[type="checkbox"]:checked').length;
+  checked_genero = $('#genero input[type="checkbox"]:checked').length;
+  checked_estilo = $('#estilo input[type="checkbox"]:checked').length;
+  checked_material = $('#material input[type="checkbox"]:checked').length;
+  checked_calibre = $('#calibre input[type="checkbox"]:checked').length;
   if (checked_genero > 0){ taxons++; }
   if (checked_estilo > 0){ taxons++; }
   if (checked_material > 0){ taxons++; }
