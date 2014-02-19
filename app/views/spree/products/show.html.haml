@@ -53,6 +53,7 @@
 	.span12.title
 		%p Otros modelos de esta coleccion
 - @types = Spree::Taxon.find_by_name!(@taxon)
+= @taxon
 - @related = Spree::Product.in_taxon(@types)
 .row-fluid.related
 	- @related.each do |prod_rel|
