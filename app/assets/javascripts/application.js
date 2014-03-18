@@ -17,3 +17,5 @@
 //= require store/magic
 //= require_tree .
 //= require bootstrap
+//= require store/jquery.mixitup
+//= require store/filters
