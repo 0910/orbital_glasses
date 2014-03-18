@@ -10,8 +10,9 @@ $(function(){
       enable: false // we won't be needing these
     },
     animation: {
-      easing: 'cubic-bezier(0.86, 0, 0.07, 1)',
-      duration: 600
+      duration: 400,
+      effects: 'fade',
+      easing: 'ease'
     }
   });
     

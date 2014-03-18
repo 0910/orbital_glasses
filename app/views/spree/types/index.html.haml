@@ -25,13 +25,12 @@
     - unless product.deleted_at!=nil
       - product.taxons.each do |taxon|
         - @tax_name += ' '+taxon.name
-      .span3
-        .mix.product{:class => @tax_name}
-          %p.hidden.taxons=@tax_name
-          = link_to(product, class: 'box smallbox') do
-            - unless product.images.empty?
-              .ph
-                = image_tag(product.images.first.attachment.url(:large))
-              .over
-                %h1= product.name
-                %p ver detalle
+      .span3.mix.product{:class => @tax_name}
+        %p.hidden.taxons=@tax_name
+        = link_to(product, class: 'box smallbox') do
+          - unless product.images.empty?
+            .ph
+              = image_tag(product.images.first.attachment.url(:large))
+            .over
+              %h1= product.name
+              %p ver detalle
